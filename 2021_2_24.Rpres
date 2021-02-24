@@ -1,0 +1,57 @@
+R Presentation
+========================================================
+author: Huijin Yu 
+date: 2021/2/24
+autosize: true
+font-import: https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap
+font-family: 'Akaya Kanadaka' 
+css:custom.css
+
+First Slide
+========================================================
+type: exclaim
+incremental:true
+For more details on authoring R presentations please visit [link](https://support.rstudio.com/hc/en-us/articles/200486468).
+
+- Bullet 1
+<li class="fragment fade-in " > hello </li>
+<code>
+- Bullet 2
+- Bullet 3
+</code>
+Slide With Code
+========================================================
+
+```{r}
+summary(cars)
+```
+
+Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Slide with Some Math
+========================================================
+
+```{r}
+$$\int_{-\infty}^ {\infty} e^{-x^2} \, dx = \sqrt{\pi}$$
+
+$$\int_{-\infty}^ {\infty} e^{-x^2} \, dx = \sqrt{\pi}$$
+```
+
+Slide with plotly
+========================================================
+```{r}
+library(plotly)
+x<-c(1:20)
+y<-x*x
+data<-data.frame(x,y)
+p<-plot_ly(data,x=-x,y=-y,
+           name="cuadratic",type="lines")
+
+htmlwidgets::savewidget(p,'plotly.html')
+```
+
